@@ -43,11 +43,11 @@ namespace OOP
             try
             {
                 conn.Open();
-                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,StatusName,Name,LastName,Telephone,Email from Reservations,Clients,Statuses where Clients.ID=Reservations.ClientID and Reservations.Status=Statuses.ID", conn);
+                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,StatusName,Name,LastName,Telephone,Email from Reservations inner join Clients on Clients.ID=Reservations.ClientID inner join Statuses on Reservations.Status=Statuses.ID", conn);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                adp.Fill(dt);
-                dataGridReservations.ItemsSource = dt.DefaultView;
+                DataSet dt = new DataSet();
+                adp.Fill(dt, "LoadDataBinding");
+                dataGridReservations.DataContext = dt;
             }
             catch (SqlException ex)
             {

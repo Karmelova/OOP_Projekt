@@ -19,9 +19,9 @@
                     <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="RoomID" Width="100" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=DateFrom}" Header="DateFrom" Width="150" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=DateTo}" Header="DateTo" Width="100" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=statuses.StatusName}" Header="Status" Width="120" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Clients.Name}" Header="Name" Width="120" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Clients.LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=StatusName}" Header="Status" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="120" IsReadOnly="True" />
                     <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="120" IsReadOnly="True" />
                 </DataGrid.Columns>
