@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="900" Width="1200">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="57*" />
+            <ColumnDefinition Width="1135*" />
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="630" Margin="10,135,0,0" VerticalAlignment="Top" Width="1009">
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="200,56,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <DataGrid AutoGenerateColumns="False" Name="dataGridReservations" HorizontalAlignment="Left" Height="300" Margin="98,152,0,0" VerticalAlignment="Top" Width="798" ItemsSource="{Binding Path=LoadDataBinding}" CanUserResizeRows="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Path=ReservationID}" Header="ReservationID" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="RoomID" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=DateFrom}" Header="DateFrom" Width="150" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=DateTo}" Header="DateTo" Width="100" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=statuses.StatusName}" Header="Status" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Clients.Name}" Header="Name" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Clients.LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="120" IsReadOnly="True" />
+                    <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="120" IsReadOnly="True" />
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button Content="Button" HorizontalAlignment="Left" Margin="728,536,0,0" VerticalAlignment="Top" Width="75" />
+        </Grid>
     </Grid>
 </Window>
