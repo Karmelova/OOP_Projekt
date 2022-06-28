@@ -76,5 +76,12 @@ namespace OOP
             this.Visibility = Visibility.Hidden;
             objEditWindow.Show();
         }
+
+        private void AddNewReservation_Click(object sender, RoutedEventArgs e)
+        {
+            addNewReservation objAddWindow = new addNewReservation();
+            this.Visibility = Visibility.Hidden;
+            objAddWindow.Show();
+        }
     }
 }

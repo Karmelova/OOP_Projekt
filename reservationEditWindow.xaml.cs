@@ -23,5 +23,12 @@ namespace OOP
         {
             InitializeComponent();
         }
+
+        private void CancelEdit_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow objMainWindow = new MainWindow();
+            this.Visibility = Visibility.Hidden;
+            objMainWindow.Show();
+        }
     }
 }
