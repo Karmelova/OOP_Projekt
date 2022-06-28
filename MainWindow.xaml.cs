@@ -60,5 +60,21 @@ namespace OOP
         }
 
         #endregion bind data to DataGrid.
+
+        private void dataGridReservations_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            DataGrid gd = (DataGrid)sender;
+            DataRowView rowSelected = gd.SelectedItem as DataRowView;
+            if (rowSelected != null)
+            {
+            }
+        }
+
+        private void reservationEditWindow_Click(object sender, RoutedEventArgs e)
+        {
+            reservationEditWindow objEditWindow = new reservationEditWindow();
+            this.Visibility = Visibility.Hidden;
+            objEditWindow.Show();
+        }
     }
 }
