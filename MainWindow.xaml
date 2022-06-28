@@ -27,6 +27,7 @@
             </DataGrid>
             <Button x:Name="reservationEditWindow" Content="Edit Reservation" HorizontalAlignment="Left" Margin="117,461,0,0" VerticalAlignment="Top" Width="191" Height="59" Click="reservationEditWindow_Click" />
             <TextBlock HorizontalAlignment="Left" Margin="483,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="276" FontSize="40" ><Run Text="RESERVATION" /><Run Text="S" /></TextBlock>
+            <Button x:Name="AddNewReservation" Content="Add New Reservation" HorizontalAlignment="Left" Height="60" Margin="948,475,0,0" VerticalAlignment="Top" Width="187" Click="AddNewReservation_Click" />
         </Grid>
     </Grid>
 </Window>

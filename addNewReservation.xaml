@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="addNewReservation" Height="450" Width="800">
     <Grid>
-        <Button x:Name="CancelAdd" Content="Cancel" HorizontalAlignment="Left" Height="63" Margin="28,316,0,0" VerticalAlignment="Top" Width="195" Click="CancelAdd_Click" />
+        <Button x:Name="CancelAdd" Content="Cancel" HorizontalAlignment="Left" Height="36" Margin="62,314,0,0" VerticalAlignment="Top" Width="77" Click="CancelAdd_Click" />
     </Grid>
 </Window>
