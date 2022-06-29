@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -56,35 +57,6 @@ namespace OOP
             }
         }
 
-        private void dataGridClients_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-        }
-
-        private void ComboBox_GotFocus(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                Connection.conn.Open();
-                SqlCommand cmd = new SqlCommand($"Select RoomID FROM Rooms Where", Connection.conn);
-                SqlDataAdapter adp = new SqlDataAdapter(cmd);
-                DataSet dtClients = new DataSet();
-                adp.Fill(dtClients, "LoadClientsBinding");
-                dataGridClients.DataContext = dtClients;
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-            finally
-            {
-                Connection.conn.Close();
-            }
-        }
-
         private void DateStart_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime date = (DateTime)((DatePicker)sender).SelectedDate;
@@ -109,6 +81,39 @@ namespace OOP
                 MessageBox.Show("It's not allowed to select past date!");
             else if (result == 0 || result2 >= 0)
                 MessageBox.Show("Reservation must last at least one day!");
+
+            LoadRooms();
+        }
+
+        private void LoadRooms()
+        {
+            try
+            {
+                DateTime startDate = (DateTime)DateStart.SelectedDate;
+                DateTime endDate = (DateTime)DateEnd.SelectedDate;
+                string dateFrom = startDate.ToString("yyyy-MM-dd");
+                string dateTo = endDate.ToString("yyyy-MM-dd");
+                Connection.conn.Open();
+
+                SqlCommand cmd = new SqlCommand($"SELECT Rooms.RoomID,Standard,MinPerson,MaxPerson FROM Rooms WHERE RoomID NOT IN (SELECT Rooms.RoomID FROM Rooms INNER JOIN Reservations ON Reservations.RoomID=Rooms.RoomID WHERE Reservations.DateFrom BETWEEN '{dateFrom}' AND '{dateTo}')", Connection.conn);
+                SqlDataAdapter adp = new SqlDataAdapter(cmd);
+
+                DataSet dtRooms = new DataSet();
+                adp.Fill(dtRooms, "AvailableRoomsList");
+                dataGridRooms.DataContext = dtRooms;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            finally
+            {
+                Connection.conn.Close();
+            }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="reservationEditWindow" Height="450" Width="800">
     <Grid>
-        <Button x:Name="CancelEdit" Content="Cancel" HorizontalAlignment="Left" Height="48" Margin="41,318,0,0" VerticalAlignment="Top" Width="169" Click="CancelEdit_Click" />
+        <Button x:Name="CancelEdit" FontSize="20px" Content="Cancel" HorizontalAlignment="Left" Height="48" Margin="41,318,0,0" VerticalAlignment="Top" Width="169" Click="CancelEdit_Click" />
     </Grid>
 </Window>

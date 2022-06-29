@@ -12,7 +12,7 @@ namespace OOP
         }
     
         public short RoomID { get; set; }
-        public byte Standard { get; set; }
+        public string Standard { get; set; }
         public byte MinPerson { get; set; }
         public byte MaxPerson { get; set; }
     

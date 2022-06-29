@@ -6,11 +6,38 @@
         xmlns:local="clr-namespace:OOP"
         mc:Ignorable="d"
         Title="addNewReservation" Height="720" Width="1280">
-    <Grid>
+    <Grid Background="#2c2c2c">
+        <Grid Background="White" Opacity="0.9" Margin="23,46,777,53">
+            <Label Content="Date From" FontSize="14px" HorizontalAlignment="Left" Margin="29,36,0,0" VerticalAlignment="Top" />
+            <DatePicker  Name="DateStart" HorizontalAlignment="Left" Margin="29,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateStart_SelectedDateChanged" Width="180" Height="40" FontSize="20" IsTodayHighlighted="False" SelectedDateFormat="Short" Text="test" Cursor="Hand" />
 
-        <DatePicker  Name="DateStart" HorizontalAlignment="Left" Margin="80,117,0,0" VerticalAlignment="Top" SelectedDateChanged="DateStart_SelectedDateChanged" />
-        <DatePicker Name="DateEnd" HorizontalAlignment="Left" Margin="308,117,0,0" VerticalAlignment="Top" SelectedDateChanged="DateEnd_SelectedDateChanged" />
-        <DataGrid HorizontalAlignment="Left" AutoGenerateColumns="False"  Name="dataGridClients" Height="586" Margin="530,50,0,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadClientsBinding}" CanUserResizeRows="False" CanUserResizeColumns="False" SelectionChanged="dataGridClients_SelectionChanged">
+            <Label Content="Date To" FontSize="14px" HorizontalAlignment="Left" Margin="270,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,-1.655" />
+            <DatePicker Background="White" Name="DateEnd" HorizontalAlignment="Left" Margin="270,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateEnd_SelectedDateChanged" Cursor="Hand" IsTodayHighlighted="False" Width="180" Height="40" FontSize="20" />
+
+            <Label Content="Room Number" FontSize="14px" HorizontalAlignment="Left" Margin="29,154,0,0" VerticalAlignment="Top" />
+            <TextBox Name="RoomID" Background="White" HorizontalAlignment="Left" FontSize="20"  Height="40" Margin="29,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"  MaxLength="3" TextAlignment="Center" MaxLines="1" />
+
+            <Label Content="Client ID" FontSize="14px" HorizontalAlignment="Left" Margin="270,154,0,0" VerticalAlignment="Top" />
+            <TextBox Background="White" Name="ClientID" HorizontalAlignment="Left" FontSize="20" Height="40" Margin="270,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TextAlignment="Center" MaxLines="1" IsUndoEnabled="True" />
+
+            <Label Content="Status" FontSize="14px" HorizontalAlignment="Left" Margin="29,274,0,0" VerticalAlignment="Top" />
+            <ComboBox HorizontalAlignment="Left" Height="40" Margin="29,303,0,0" VerticalAlignment="Top" Width="180" FontSize="20">
+                <ComboBoxItem Content="Unconfirmed" />
+                <ComboBoxItem Content="Confirmed" />
+                <ComboBoxItem Content="Paid" />
+                <ComboBoxItem Content="Canceled" />
+            </ComboBox>
+        </Grid>
+        <DataGrid Name="dataGridRooms" AutoGenerateColumns="False"  HorizontalAlignment="Left" Height="280" Margin="530,47,0,0" VerticalAlignment="Top" Width="672" ItemsSource="{Binding Path=AvailableRoomsList}" CanUserResizeRows="False" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="Room Number" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Standard}" Header="Standard" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=MinPerson}" Header="Minimum Person Amount" Width="180" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=MaxPerson}" Header="Maximum Person Amount" Width="180" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <DataGrid HorizontalAlignment="Left" AutoGenerateColumns="False"  Name="dataGridClients" Height="280" Margin="530,360,0,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadClientsBinding}" CanUserResizeRows="False" CanUserResizeColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="40" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
@@ -20,11 +47,8 @@
                 <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="CancelAdd" Content="Cancel" HorizontalAlignment="Left" Height="60" Width="398" Margin="50,576,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
-        <Button Content="Add Reservation" HorizontalAlignment="Left" Height="60" Margin="50,476,0,0" VerticalAlignment="Top" Width="180" />
-        <Button Content="Add New Client" HorizontalAlignment="Left" Height="60" Margin="268,476,0,0" VerticalAlignment="Top" Width="180" />
-        <ComboBox HorizontalAlignment="Left" Height="30" Margin="80,187,0,0" VerticalAlignment="Top" Width="332" SelectionChanged="ComboBox_SelectionChanged" GotFocus="ComboBox_GotFocus" />
-        <Label Content="Date From" HorizontalAlignment="Left" Margin="80,91,0,0" VerticalAlignment="Top" />
-        <Label Content="Date To" HorizontalAlignment="Left" Margin="308,91,0,0" VerticalAlignment="Top" />
+        <Button x:Name="CancelAdd" Content="Cancel" FontSize="20" HorizontalAlignment="Left" Height="60" Width="422" Margin="50,530,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
+        <Button Content="Add Reservation" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="50,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click" />
+        <Button Content="Add New Client" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="292,438,0,0" VerticalAlignment="Top" Width="180" />
     </Grid>
 </Window>
