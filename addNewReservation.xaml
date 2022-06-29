@@ -5,8 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOP"
         mc:Ignorable="d"
-        Title="addNewReservation" Height="450" Width="800">
+        Title="addNewReservation" Height="720" Width="1280">
     <Grid>
-        <Button x:Name="CancelAdd" Content="Cancel" HorizontalAlignment="Left" Height="36" Margin="62,314,0,0" VerticalAlignment="Top" Width="77" Click="CancelAdd_Click" />
+
+        <DatePicker  Name="DateStart" HorizontalAlignment="Left" Margin="80,117,0,0" VerticalAlignment="Top" SelectedDateChanged="DateStart_SelectedDateChanged" />
+        <DatePicker Name="DateEnd" HorizontalAlignment="Left" Margin="308,117,0,0" VerticalAlignment="Top" SelectedDateChanged="DateEnd_SelectedDateChanged" />
+        <DataGrid HorizontalAlignment="Left" AutoGenerateColumns="False"  Name="dataGridClients" Height="586" Margin="530,50,0,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadClientsBinding}" CanUserResizeRows="False" CanUserResizeColumns="False" SelectionChanged="dataGridClients_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ID}" Header="ID" Width="40" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=DocumentID}" Header="Document ID" Width="100" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="100" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="CancelAdd" Content="Cancel" HorizontalAlignment="Left" Height="60" Width="398" Margin="50,576,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
+        <Button Content="Add Reservation" HorizontalAlignment="Left" Height="60" Margin="50,476,0,0" VerticalAlignment="Top" Width="180" />
+        <Button Content="Add New Client" HorizontalAlignment="Left" Height="60" Margin="268,476,0,0" VerticalAlignment="Top" Width="180" />
+        <ComboBox HorizontalAlignment="Left" Height="30" Margin="80,187,0,0" VerticalAlignment="Top" Width="332" SelectionChanged="ComboBox_SelectionChanged" GotFocus="ComboBox_GotFocus" />
+        <Label Content="Date From" HorizontalAlignment="Left" Margin="80,91,0,0" VerticalAlignment="Top" />
+        <Label Content="Date To" HorizontalAlignment="Left" Margin="308,91,0,0" VerticalAlignment="Top" />
     </Grid>
 </Window>

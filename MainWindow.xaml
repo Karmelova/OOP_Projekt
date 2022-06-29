@@ -7,27 +7,22 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="720" Width="1280">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="57*" />
-            <ColumnDefinition Width="1135*" />
-        </Grid.ColumnDefinitions>
-        <Grid HorizontalAlignment="Left" Height="622" Margin="0,32,10,0" VerticalAlignment="Top" Width="1252" Grid.ColumnSpan="2">
-            <DataGrid AutoGenerateColumns="False"  Name="dataGridReservations" Height="300" Margin="117,120,117,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadDataBinding}" CanUserResizeRows="False" SelectionChanged="dataGridReservations_SelectionChanged">
-                <DataGrid.Columns>
-                    <DataGridTextColumn Binding="{Binding Path=ReservationID}" Header="ID" Width="30" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="Room" Width="50" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=DateFrom}" Header="Date From" Width="150" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=DateTo}" Header="Date To" Width="150" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=StatusName}" Header="Status" Width="90" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="120" IsReadOnly="True" />
-                    <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <Button x:Name="reservationEditWindow" Content="Edit Reservation" HorizontalAlignment="Left" Margin="117,461,0,0" VerticalAlignment="Top" Width="191" Height="59" Click="reservationEditWindow_Click" />
-            <TextBlock HorizontalAlignment="Left" Margin="483,26,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" Width="276" FontSize="40" ><Run Text="RESERVATION" /><Run Text="S" /></TextBlock>
-            <Button x:Name="AddNewReservation" Content="Add New Reservation" HorizontalAlignment="Left" Height="60" Margin="948,475,0,0" VerticalAlignment="Top" Width="187" Click="AddNewReservation_Click" />
-        </Grid>
+
+        <TextBlock Margin="498,40,498,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" FontSize="40" ><Run Text="RESERVATIONS" /></TextBlock>
+        <DataGrid AutoGenerateColumns="False"  Name="dataGridReservations" Height="300" Margin="110,140,110,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadDataBinding}" CanUserResizeColumns="False" CanUserResizeRows="False" SelectionChanged="dataGridReservations_SelectionChanged" Grid.Column="1">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=ReservationID}" Header="ID" Width="30" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="Room" Width="50" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=DateFrom}" Header="Date From" Width="150" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=DateTo}" Header="Date To" Width="150" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=StatusName}" Header="Status" Width="90" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="120" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="reservationEditWindow" Content="Edit Reservation" HorizontalAlignment="Left" Height="60" Width="180" Margin="110,500,0,0" VerticalAlignment="Top" Click="reservationEditWindow_Click" />
+        <Button x:Name="AddNewReservation" Content="Add New Reservation" HorizontalAlignment="Left" Height="60" Width="180" Margin="975,499,0,0" VerticalAlignment="Top" Click="AddNewReservation_Click" />
     </Grid>
 </Window>
