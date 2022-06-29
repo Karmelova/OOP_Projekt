@@ -23,18 +23,11 @@ namespace OOP
     /// </summary>
     public partial class MainWindow : Window
     {
-        #region MySqlConnection Connection
-
-        private SqlConnection conn = new
-        SqlConnection(ConfigurationManager.ConnectionStrings["hoteldbEntities"].ConnectionString);
-
         public MainWindow()
         {
             InitializeComponent();
             LoadGrid();
         }
-
-        #endregion MySqlConnection Connection
 
         #region bind data to DataGrid.
 
@@ -42,8 +35,8 @@ namespace OOP
         {
             try
             {
-                conn.Open();
-                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,StatusName,Name,LastName,Telephone,Email from Reservations inner join Clients on Clients.ID=Reservations.ClientID inner join Statuses on Reservations.Status=Statuses.ID", conn);
+                Connection.conn.Open();
+                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,StatusName,Name,LastName,Telephone,Email from Reservations inner join Clients on Clients.ID=Reservations.ClientID inner join Statuses on Reservations.Status=Statuses.ID", Connection.conn);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet dt = new DataSet();
                 adp.Fill(dt, "LoadDataBinding");
@@ -55,7 +48,7 @@ namespace OOP
             }
             finally
             {
-                conn.Close();
+                Connection.conn.Close();
             }
         }
 
