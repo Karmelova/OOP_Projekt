@@ -15,7 +15,7 @@
                 <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="Room" Width="50" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=DateFrom}" Header="Date From" Width="150" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=DateTo}" Header="Date To" Width="150" IsReadOnly="True" />
-                <DataGridTextColumn Binding="{Binding Path=StatusName}" Header="Status" Width="90" IsReadOnly="True" />
+                <DataGridTextColumn Binding="{Binding Path=ReservationStatus}" Header="Status" Width="90" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=Name}" Header="Name" Width="120" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=LastName}" Header="Last Name" Width="120" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=Telephone}" Header="Telephone" Width="120" IsReadOnly="True" />
