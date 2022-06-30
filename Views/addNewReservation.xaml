@@ -48,8 +48,9 @@
                 <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="CancelAdd" Content="Cancel" FontSize="16" HorizontalAlignment="Left" Height="60" Width="422" Margin="50,530,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
-        <Button Content="Add Reservation" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="50,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click" />
-        <Button Content="Add New Client" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="292,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click_1" />
+        <Button Background="#FF7276" x:Name="CancelAdd" Content="Cancel" FontSize="16" HorizontalAlignment="Left" Height="60" Width="180" Margin="50,533,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
+        <Button  Background="#ADDFB3" Content="Add Reservation" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="50,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click" />
+        <Button Background="#A7C7E7" Content="Add New Client" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="292,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click_1" />
+        <Button x:Name="Refreshbtn" Background="#A7C7E7" Content="Refresh" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="292,533,0,0" VerticalAlignment="Top" Width="180" Click="Refreshbtn_Click" />
     </Grid>
 </Window>

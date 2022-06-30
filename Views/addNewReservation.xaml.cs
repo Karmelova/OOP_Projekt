@@ -149,5 +149,10 @@ namespace OOP
             AddClient objAddClient = new AddClient();
             objAddClient.Show();
         }
+
+        private void Refreshbtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoadClients();
+        }
     }
 }
