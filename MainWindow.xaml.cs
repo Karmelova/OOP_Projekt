@@ -36,7 +36,7 @@ namespace OOP
             try
             {
                 Connection.conn.Open();
-                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,StatusName,Name,LastName,Telephone,Email from Reservations inner join Clients on Clients.ID=Reservations.ClientID inner join Statuses on Reservations.ReservationStatus=Statuses.ID", Connection.conn);
+                SqlCommand cmd = new SqlCommand("Select ReservationID,RoomID,DateFrom,DateTo,ReservationStatus,Name,LastName,Telephone,Email from Reservations inner join Clients on Clients.ID=Reservations.ClientID", Connection.conn);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
                 DataSet dt = new DataSet();
                 adp.Fill(dt, "LoadDataBinding");

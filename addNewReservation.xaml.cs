@@ -121,11 +121,12 @@ namespace OOP
                 int roomIdint = int.Parse(RoomID.Text);
                 DateTime startDate = (DateTime)DateStart.SelectedDate;
                 DateTime endDate = (DateTime)DateEnd.SelectedDate;
-                var getStatuts = StatusesCb.SelectedIndex;
-                getStatuts++;
-                short.Parse(getStatuts.ToString());
-                db.Reservations.Add(new Reservation { RoomID = (short)roomIdint, ClientID = clientIDint, ReservationStatus = (short)getStatuts, DateFrom = startDate, DateTo = endDate });
+                string getStatuts = StatusesCb.SelectedItem.ToString();
+                getStatuts = getStatuts.Remove(0, 38);
+
+                db.Reservations.Add(entity: new Reservation { RoomID = (short)roomIdint, ClientID = clientIDint, ReservationStatus = $"{getStatuts}", DateFrom = startDate, DateTo = endDate });
                 db.SaveChanges();
+                MessageBox.Show("Reservation added successfully");
             }
             catch (SqlException ex)
             {
@@ -139,6 +140,12 @@ namespace OOP
             {
                 Connection.conn.Close();
             }
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddClient objAddClient = new AddClient();
+            objAddClient.Show();
         }
     }
 }

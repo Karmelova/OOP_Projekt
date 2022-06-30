@@ -1,0 +1,20 @@
+﻿<Window x:Class="OOP.AddClient"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OOP"
+        mc:Ignorable="d"
+        Title="AddClient" Height="450" Width="800">
+    <Grid Background="#2c2c2c">
+        <Grid Background="White" Opacity="0.8" Margin="25,25,26,27">
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="132,87,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="104,46,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="481,188,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="85,188,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <TextBox HorizontalAlignment="Left" Height="23" Margin="104,139,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" />
+            <Button x:Name="btnAddClient" Background="#ADDFB3" Content="Add Client" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="44,267,0,0" VerticalAlignment="Top" Width="180" Click="btnAddClient_Click" />
+            <Button Background="#FF7276"  x:Name="CancelAdd" Content="Cancel" FontSize="16" HorizontalAlignment="Left" Height="60" Width="180" Margin="491,267,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
+        </Grid>
+    </Grid>
+</Window>
