@@ -38,7 +38,7 @@ namespace OOP
             objMainWindow.Show();
         }
 
-        private void LoadClients()
+        public void LoadClients()
         {
             try
             {
