@@ -1,4 +1,4 @@
-namespace OOP
+namespace OOP.Models
 {
     using System;
     using System.Collections.Generic;
@@ -16,7 +16,6 @@ namespace OOP
         public string DocumentID { get; set; }
         public string Telephone { get; set; }
         public string Email { get; set; }
-    
         public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }
