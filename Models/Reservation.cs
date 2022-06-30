@@ -1,13 +1,10 @@
-namespace OOP
+namespace OOP.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class Reservation
     {
-       
-
         public int ReservationID { get; set; }
         public short RoomID { get; set; }
         public int ClientID { get; set; }
@@ -17,5 +14,6 @@ namespace OOP
     
         public virtual Client Client { get; set; }
         public virtual Room Room { get; set; }
+        
     }
 }
