@@ -6,22 +6,23 @@
         xmlns:local="clr-namespace:OOP"
         mc:Ignorable="d"
         Title="addNewReservation" Height="720" Width="1280">
+
     <Grid Background="#2c2c2c">
         <Grid Background="White" Opacity="0.9" Margin="23,46,777,53">
             <Label Content="Date From" FontSize="14px" HorizontalAlignment="Left" Margin="29,36,0,0" VerticalAlignment="Top" />
-            <DatePicker  Name="DateStart" HorizontalAlignment="Left" Margin="29,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateStart_SelectedDateChanged" Width="180" Height="40" FontSize="20" IsTodayHighlighted="False" SelectedDateFormat="Short" Text="test" Cursor="Hand" />
+            <DatePicker  Name="DateStart" HorizontalAlignment="Left" Margin="29,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateStart_SelectedDateChanged" Width="180" Height="40" FontSize="16" IsTodayHighlighted="False" SelectedDateFormat="Short" Text="test" Cursor="Hand" />
 
             <Label Content="Date To" FontSize="14px" HorizontalAlignment="Left" Margin="270,36,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.386,-1.655" />
-            <DatePicker Background="White" Name="DateEnd" HorizontalAlignment="Left" Margin="270,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateEnd_SelectedDateChanged" Cursor="Hand" IsTodayHighlighted="False" Width="180" Height="40" FontSize="20" />
+            <DatePicker Background="White" Name="DateEnd" HorizontalAlignment="Left" Margin="270,65,0,0" VerticalAlignment="Top" SelectedDateChanged="DateEnd_SelectedDateChanged" Cursor="Hand" IsTodayHighlighted="False" Width="180" Height="40" FontSize="16" />
 
             <Label Content="Room Number" FontSize="14px" HorizontalAlignment="Left" Margin="29,154,0,0" VerticalAlignment="Top" />
-            <TextBox Name="RoomID" Background="White" HorizontalAlignment="Left" FontSize="20"  Height="40" Margin="29,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"  MaxLength="3" TextAlignment="Center" MaxLines="1" />
+            <TextBox Name="RoomID" Background="White" HorizontalAlignment="Left" FontSize="16"  Height="40" Margin="29,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180"  MaxLength="3" TextAlignment="Center" MaxLines="1" />
 
             <Label Content="Client ID" FontSize="14px" HorizontalAlignment="Left" Margin="270,154,0,0" VerticalAlignment="Top" />
-            <TextBox Background="White" Name="ClientID" HorizontalAlignment="Left" FontSize="20" Height="40" Margin="270,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TextAlignment="Center" MaxLines="1" IsUndoEnabled="True" />
+            <TextBox Background="White" Name="ClientID" HorizontalAlignment="Left" FontSize="16" Height="40" Margin="270,183,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="180" TextAlignment="Center" MaxLines="1" IsUndoEnabled="True" />
 
             <Label Content="Status" FontSize="14px" HorizontalAlignment="Left" Margin="29,274,0,0" VerticalAlignment="Top" />
-            <ComboBox HorizontalAlignment="Left" Height="40" Margin="29,303,0,0" VerticalAlignment="Top" Width="180" FontSize="20">
+            <ComboBox x:Name="StatusesCb" HorizontalAlignment="Left" Height="40" Margin="29,303,0,0" VerticalAlignment="Top" Width="180" FontSize="16">
                 <ComboBoxItem Content="Unconfirmed" />
                 <ComboBoxItem Content="Confirmed" />
                 <ComboBoxItem Content="Paid" />
@@ -47,8 +48,8 @@
                 <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="CancelAdd" Content="Cancel" FontSize="20" HorizontalAlignment="Left" Height="60" Width="422" Margin="50,530,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
-        <Button Content="Add Reservation" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="50,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click" />
-        <Button Content="Add New Client" FontSize="20" HorizontalAlignment="Left" Height="60" Margin="292,438,0,0" VerticalAlignment="Top" Width="180" />
+        <Button x:Name="CancelAdd" Content="Cancel" FontSize="16" HorizontalAlignment="Left" Height="60" Width="422" Margin="50,530,0,0" VerticalAlignment="Top"  Click="CancelAdd_Click" />
+        <Button Content="Add Reservation" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="50,438,0,0" VerticalAlignment="Top" Width="180" Click="Button_Click" />
+        <Button Content="Add New Client" FontSize="16" HorizontalAlignment="Left" Height="60" Margin="292,438,0,0" VerticalAlignment="Top" Width="180" />
     </Grid>
 </Window>

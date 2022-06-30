@@ -5,7 +5,6 @@ namespace OOP
     
     public partial class Client
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Client()
         {
             this.Reservations = new HashSet<Reservation>();
@@ -18,7 +17,6 @@ namespace OOP
         public string Telephone { get; set; }
         public string Email { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Reservation> Reservations { get; set; }
     }
 }

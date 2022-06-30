@@ -93,8 +93,8 @@ namespace OOP
                 DateTime endDate = (DateTime)DateEnd.SelectedDate;
                 string dateFrom = startDate.ToString("yyyy-MM-dd");
                 string dateTo = endDate.ToString("yyyy-MM-dd");
-                Connection.conn.Open();
 
+                Connection.conn.Open();
                 SqlCommand cmd = new SqlCommand($"SELECT Rooms.RoomID,Standard,MinPerson,MaxPerson FROM Rooms WHERE RoomID NOT IN (SELECT Rooms.RoomID FROM Rooms INNER JOIN Reservations ON Reservations.RoomID=Rooms.RoomID WHERE Reservations.DateFrom BETWEEN '{dateFrom}' AND '{dateTo}')", Connection.conn);
                 SqlDataAdapter adp = new SqlDataAdapter(cmd);
 
@@ -114,6 +114,31 @@ namespace OOP
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                hoteldbEntities db = new hoteldbEntities(Connection.conn);
+                int clientIDint = int.Parse(ClientID.Text);
+                int roomIdint = int.Parse(RoomID.Text);
+                DateTime startDate = (DateTime)DateStart.SelectedDate;
+                DateTime endDate = (DateTime)DateEnd.SelectedDate;
+                var getStatuts = StatusesCb.SelectedIndex;
+                getStatuts++;
+                short.Parse(getStatuts.ToString());
+                db.Reservations.Add(new Reservation { RoomID = (short)roomIdint, ClientID = clientIDint, ReservationStatus = (short)getStatuts, DateFrom = startDate, DateTo = endDate });
+                db.SaveChanges();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Complete form first!");
+            }
+            finally
+            {
+                Connection.conn.Close();
+            }
         }
     }
 }

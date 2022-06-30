@@ -15,14 +15,14 @@ namespace OOP
     
     public partial class hoteldbEntities : DbContext
     {
-        public hoteldbEntities()
+        public hoteldbEntities(System.Data.SqlClient.SqlConnection conn)
             : base("name=hoteldbEntities")
         {
         }
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Build(Connection.conn);
         }
     
         public virtual DbSet<Client> Clients { get; set; }
