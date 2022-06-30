@@ -1,5 +1,7 @@
-﻿using System;
+﻿using OOP.Models;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +33,34 @@ namespace OOP
 
         private void btnAddClient_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                hoteldbEntities db = new hoteldbEntities(Connection.conn);
+
+                if (ClientName.Text != "" && ClientLastName.Text != "" && ClientDocumentID.Text != "")
+                {
+                    db.Clients.Add(entity: new Client { Name = ClientName.Text, LastName = ClientLastName.Text, DocumentID = ClientDocumentID.Text, Telephone = ClientTelephone.Text, Email = ClientEmail.Text });
+                    db.SaveChanges();
+                    MessageBox.Show("Client added successfully");
+                    this.Visibility = Visibility.Hidden;
+                }
+                else
+                {
+                    throw new FormatException();
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Complete form first!");
+            }
+            finally
+            {
+                Connection.conn.Close();
+            }
         }
     }
 }
