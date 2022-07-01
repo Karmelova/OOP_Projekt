@@ -6,6 +6,6 @@ namespace OOP
     internal static class Connection
     {
         public static SqlConnection conn = new
-        SqlConnection(ConfigurationManager.ConnectionStrings["hoteldbEntities"].ConnectionString);
+        SqlConnection(ConfigurationManager.ConnectionStrings["Model1"].ConnectionString);
     }
 }

@@ -118,7 +118,7 @@ namespace OOP
         {
             try
             {
-                hoteldbEntities db = new hoteldbEntities(Connection.conn);
+                Model1 db = new Model1(Connection.conn);
                 int clientIDint = int.Parse(ClientID.Text);
                 int roomIdint = int.Parse(RoomID.Text);
                 DateTime startDate = (DateTime)DateStart.SelectedDate;
@@ -126,7 +126,7 @@ namespace OOP
                 string getStatuts = StatusesCb.SelectedItem.ToString();
                 getStatuts = getStatuts.Remove(0, 38);
 
-                db.Reservations.Add(entity: new Reservation { RoomID = (short)roomIdint, ClientID = clientIDint, ReservationStatus = $"{getStatuts}", DateFrom = startDate, DateTo = endDate });
+                db.Reservations.Add(entity: new Reservations { RoomID = (short)roomIdint, ClientID = clientIDint, ReservationStatus = $"{getStatuts}", DateFrom = startDate, DateTo = endDate });
                 db.SaveChanges();
                 MessageBox.Show("Reservation added successfully");
             }
