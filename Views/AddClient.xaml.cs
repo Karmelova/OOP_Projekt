@@ -35,11 +35,11 @@ namespace OOP
         {
             try
             {
-                hoteldbEntities db = new hoteldbEntities(Connection.conn);
+                Model1 db = new Model1(Connection.conn);
 
                 if (ClientName.Text != "" && ClientLastName.Text != "" && ClientDocumentID.Text != "")
                 {
-                    db.Clients.Add(entity: new Client { Name = ClientName.Text, LastName = ClientLastName.Text, DocumentID = ClientDocumentID.Text, Telephone = ClientTelephone.Text, Email = ClientEmail.Text });
+                    db.Clients.Add(entity: new Clients { Name = ClientName.Text, LastName = ClientLastName.Text, DocumentID = ClientDocumentID.Text, Telephone = ClientTelephone.Text, Email = ClientEmail.Text });
                     db.SaveChanges();
                     MessageBox.Show("Client added successfully");
                     this.Visibility = Visibility.Hidden;
@@ -61,6 +61,16 @@ namespace OOP
             {
                 Connection.conn.Close();
             }
+        }
+    }
+
+    internal class hoteldbEntities
+    {
+        private SqlConnection conn;
+
+        public hoteldbEntities(SqlConnection conn)
+        {
+            this.conn = conn;
         }
     }
 }
