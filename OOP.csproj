@@ -80,9 +80,6 @@
     <Compile Include="Views\AddPayment.xaml.cs">
       <DependentUpon>AddPayment.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\reservationEditWindow.xaml.cs">
-      <DependentUpon>reservationEditWindow.xaml</DependentUpon>
-    </Compile>
     <Page Include="Views\AddClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,10 +101,6 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="Views\AddPayment.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\reservationEditWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

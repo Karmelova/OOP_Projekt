@@ -38,6 +38,9 @@ namespace OOP
             objMainWindow.Show();
         }
 
+        /// <summary>
+        /// This method loads data to datagrid named dataGridClients
+        /// </summary>
         public void LoadClients()
         {
             try
@@ -71,6 +74,12 @@ namespace OOP
             }
         }
 
+
+        /// <summary>
+        /// Validate datepickers, and then load rooms that is not reserved between selected by user dates
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void DateEnd_SelectedDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime startDate = (DateTime)DateStart.SelectedDate;
@@ -87,6 +96,10 @@ namespace OOP
             LoadRooms();
         }
 
+
+        /// <summary>
+        /// Load datagrid named dataGridRooms
+        /// </summary>
         private void LoadRooms()
         {
             try
@@ -114,6 +127,12 @@ namespace OOP
             }
         }
 
+
+        /// <summary>
+        /// Add new reservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -144,12 +163,24 @@ namespace OOP
             }
         }
 
+
+        /// <summary>
+        /// Show AddClient window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             AddClient objAddClient = new AddClient();
             objAddClient.Show();
         }
 
+
+        /// <summary>
+        /// Reload data in dataGridClients
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Refreshbtn_Click(object sender, RoutedEventArgs e)
         {
             LoadClients();
