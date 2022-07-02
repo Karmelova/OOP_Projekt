@@ -22,7 +22,8 @@
                 <DataGridTextColumn Binding="{Binding Path=Email}" Header="Email" Width="190" IsReadOnly="True" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="AddNewReservation" Background="#A7C7E7" Content="New Reservation" HorizontalAlignment="Left" Height="60" FontSize="20px" Width="180" Margin="975,499,0,0" VerticalAlignment="Top" Click="AddNewReservation_Click" />
-        <Button x:Name="Payments" Background="#A7C7E7" Content="Payments" HorizontalAlignment="Left" Height="60" FontSize="20px" Width="180" Margin="110,499,0,0" VerticalAlignment="Top" Click="AddNewReservation_Click" />
+        <Button x:Name="AddNewReservation" Background="#A7C7E7" Content="New Reservation" HorizontalAlignment="Left" Height="60" FontSize="16px" Width="180" Margin="975,499,0,0" VerticalAlignment="Top" Click="AddNewReservation_Click" />
+        <Button x:Name="AddPayment" Background="#A7C7E7" Content="New Payment" HorizontalAlignment="Left" Height="60" FontSize="16px" Width="180" Margin="710,499,0,0" VerticalAlignment="Top" Click="AddPayment_Click"  />
+        <Button x:Name="Refreshbtn" FontSize="16px" Background="#A7C7E7" Content="Refresh"  HorizontalAlignment="Left" Height="60" Margin="110,499,0,0" VerticalAlignment="Top" Width="180" Click="Refreshbtn_Click" />
     </Grid>
 </Window>

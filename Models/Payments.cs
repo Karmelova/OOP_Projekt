@@ -12,6 +12,6 @@ namespace OOP.Models
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int FVID { get; set; }
 
-        public int Cost { get; set; }
+        public float Cost { get; set; }
     }
 }
