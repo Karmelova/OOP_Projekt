@@ -26,6 +26,11 @@ namespace OOP.Views
             InitializeComponent();
         }
 
+        /// <summary>
+        /// add new payment and update reservation status to "Paid"
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -63,6 +68,12 @@ namespace OOP.Views
             }
         }
 
+
+        /// <summary>
+        /// Hide AddPAyment window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelAdd_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;

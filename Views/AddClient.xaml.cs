@@ -26,11 +26,22 @@ namespace OOP
             InitializeComponent();
         }
 
+
+        /// <summary>
+        /// Hide window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void CancelAdd_Click(object sender, RoutedEventArgs e)
         {
             this.Visibility = Visibility.Hidden;
         }
 
+        /// <summary>
+        /// Add new client to database
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAddClient_Click(object sender, RoutedEventArgs e)
         {
             try

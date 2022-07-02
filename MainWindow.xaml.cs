@@ -31,8 +31,10 @@ namespace OOP
             LoadGrid();
         }
 
-        #region bind data to DataGrid.
-
+        
+        /// <summary>
+        /// Load data in dataGridReservations from database
+        /// </summary>
         private void LoadGrid()
         {
             try
@@ -54,24 +56,11 @@ namespace OOP
             }
         }
 
-        #endregion bind data to DataGrid.
-
-        private void dataGridReservations_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-            DataGrid gd = (DataGrid)sender;
-            DataRowView rowSelected = gd.SelectedItem as DataRowView;
-            if (rowSelected != null)
-            {
-            }
-        }
-
-        private void reservationEditWindow_Click(object sender, RoutedEventArgs e)
-        {
-            reservationEditWindow objEditWindow = new reservationEditWindow();
-            this.Visibility = Visibility.Hidden;
-            objEditWindow.Show();
-        }
-
+        /// <summary>
+        /// Show AddNewReservation window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddNewReservation_Click(object sender, RoutedEventArgs e)
         {
             addNewReservation objAddWindow = new addNewReservation();
@@ -79,6 +68,11 @@ namespace OOP
             objAddWindow.Show();
         }
 
+        /// <summary>
+        /// Show AddPayment window
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AddPayment_Click(object sender, RoutedEventArgs e)
         {
             AddPayment objAddPayment = new AddPayment();
@@ -86,6 +80,11 @@ namespace OOP
             
         }
 
+        /// <summary>
+        /// Refresz data in dataGridReservation
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Refreshbtn_Click(object sender, RoutedEventArgs e)
         {
             LoadGrid();
