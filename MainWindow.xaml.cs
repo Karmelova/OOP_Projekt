@@ -16,6 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using OOP;
+using OOP.Views;
 
 namespace OOP
 {
@@ -76,6 +77,18 @@ namespace OOP
             addNewReservation objAddWindow = new addNewReservation();
             this.Visibility = Visibility.Hidden;
             objAddWindow.Show();
+        }
+
+        private void AddPayment_Click(object sender, RoutedEventArgs e)
+        {
+            AddPayment objAddPayment = new AddPayment();
+            objAddPayment.Show();
+            
+        }
+
+        private void Refreshbtn_Click(object sender, RoutedEventArgs e)
+        {
+            LoadGrid();
         }
     }
 }
