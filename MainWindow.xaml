@@ -9,7 +9,7 @@
     <Grid Background="#2c2c2c">
 
         <TextBlock Foreground="White" Margin="498,40,498,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="64" FontSize="40" ><Run Text="RESERVATIONS" /></TextBlock>
-        <DataGrid AutoGenerateColumns="False"  Name="dataGridReservations" Height="300" Margin="110,140,110,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadDataBinding}" CanUserResizeColumns="False" CanUserResizeRows="False" SelectionChanged="dataGridReservations_SelectionChanged" Grid.Column="1">
+        <DataGrid AutoGenerateColumns="False"  Name="dataGridReservations" Height="300" Margin="110,140,110,0" VerticalAlignment="Top" ItemsSource="{Binding Path=LoadDataBinding}" CanUserResizeColumns="False" CanUserResizeRows="False" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding Path=ReservationID}" Header="ID" Width="30" IsReadOnly="True" />
                 <DataGridTextColumn Binding="{Binding Path=RoomID}" Header="Room" Width="50" IsReadOnly="True" />
